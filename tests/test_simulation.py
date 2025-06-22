@@ -29,5 +29,6 @@ def test_simulate_global_returns_all_regions():
     policies = PolicyInputs(interest_rate=0.05, government_spending_pct=0.2, tax_rate=0.2)
     global_results = simulate_global(policies, years=1)
     assert set(global_results.keys()) == set(GLOBAL_BASE_GDP.keys())
+    assert len(GLOBAL_BASE_GDP) > 170
     for value in global_results.values():
         assert value > 0
